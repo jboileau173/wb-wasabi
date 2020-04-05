@@ -1,6 +1,9 @@
 {
-  "name": "wb-generic-crud",
+  "name": "@jboileau173/wb-generic-crud",
   "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "peerDependencies": {
     "@angular/common": "^9.1.0",
     "@angular/core": "^9.1.0",
