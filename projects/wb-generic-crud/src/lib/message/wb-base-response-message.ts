@@ -1,5 +1,5 @@
 /**
- * Le message de base lors d'un appel à l'api
+ * Le message de retour de base lors d'un appel à l'api
  *
  * @export
  * @class WbBaseResponseMessage
@@ -16,7 +16,7 @@ export class WbBaseResponseMessage
 
 
   /**
-   * Permet d'indiquer si une erreur est survenu sur l'api
+   * Permet d'indiquer si une erreur est survenue sur l'api
    *
    * @type {boolean}
    * @memberof WbBaseResponseMessage
