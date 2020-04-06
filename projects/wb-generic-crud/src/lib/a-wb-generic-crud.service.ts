@@ -17,22 +17,24 @@ import { WbUpdateRessourceResponseMessage } from './message/wb-update-ressource-
 export abstract class AWbGenericCrudService
 {
   /**
-   * URL de l'api
+   * Url de l'api
    *
    * @protected
+   * @abstract
    * @type {string}
    * @memberof AWbGenericCrudService
    */
-  protected _apiUrl: string;
+  protected abstract _apiUrl: string;
 
   /**
    * Le nom du contrôleur à utiliser
    *
    * @protected
+   * @abstract
    * @type {string}
    * @memberof AWbGenericCrudService
    */
-  protected _endpoint: string;
+  protected abstract _endpoint: string;
 
   protected constructor(
     protected _httpClient: HttpClient
