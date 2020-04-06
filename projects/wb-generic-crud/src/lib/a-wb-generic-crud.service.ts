@@ -7,7 +7,6 @@ import { WbGetAllRessourcesResponseMessage } from './message/wb-get-all-ressourc
 import { WbGetRessourceResponseMessage } from './message/wb-get-ressource-response-message';
 import { WbUpdateRessourceResponseMessage } from './message/wb-update-ressource-response-message';
 
-
 /**
  * Service pour effectuer les opérations basiques sur une API (CRUD).
  *

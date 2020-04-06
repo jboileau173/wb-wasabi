@@ -14,7 +14,6 @@ export class WbBaseResponseMessage
    */
   public message: string;
 
-
   /**
    * Permet d'indiquer si une erreur est survenue sur l'api
    *
