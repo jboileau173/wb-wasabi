@@ -6,3 +6,5 @@ export * from './lib/message/wb-get-ressource-response-message';
 export * from './lib/message/wb-update-ressource-response-message';
 
 export * from './lib/a-wb-generic-crud.service';
+
+export * from './lib/wb-generic-crud.module';
