@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { WbCreateRessourceResponseMessage } from './message/wb-create-ressource-response-message';
-import { WbDeleteRessourceByIdResponseMessage } from './message/wb-delete-ressource-by-id-response-message';
-import { WbGetAllRessourcesResponseMessage } from './message/wb-get-all-ressources-response-message';
-import { WbGetRessourceResponseMessage } from './message/wb-get-ressource-response-message';
-import { WbUpdateRessourceResponseMessage } from './message/wb-update-ressource-response-message';
+import { WbCreateResourceResponseMessage } from './message/wb-create-resource-response-message';
+import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resource-by-id-response-message';
+import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
+import { WbGetResourceResponseMessage } from './message/wb-get-resource-response-message';
+import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-response-message';
 
 /**
  * Service pour effectuer les opérations basiques sur une API (CRUD).
@@ -44,13 +44,13 @@ export abstract class AWbGenericCrudService
    * Permet la récupération de toutes les ressources
    *
    * @template TModel
-   * @returns {Observable<WbGetAllRessourcesResponseMessage<TModel>>}
+   * @returns {Observable<WbGetAllResourcesResponseMessage<TModel>>}
    * @memberof AWbGenericCrudService
    */
-  public getAll<TModel>(): Observable<WbGetAllRessourcesResponseMessage<TModel>>
+  public getAll<TModel>(): Observable<WbGetAllResourcesResponseMessage<TModel>>
   {
     return this._httpClient
-      .get<WbGetAllRessourcesResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}`);
+      .get<WbGetAllResourcesResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}`);
   }
 
   /**
@@ -58,26 +58,26 @@ export abstract class AWbGenericCrudService
    *
    * @template TModel
    * @param {number} id
-   * @returns {Observable<WbGetRessourceResponseMessage<TModel>>}
+   * @returns {Observable<WbGetResourceResponseMessage<TModel>>}
    * @memberof AWbGenericCrudService
    */
-  public getById<TModel>(id: number): Observable<WbGetRessourceResponseMessage<TModel>>
+  public getById<TModel>(id: number): Observable<WbGetResourceResponseMessage<TModel>>
   {
     return this._httpClient
-      .get<WbGetRessourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`);
+      .get<WbGetResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`);
   }
 
   /**
    * Permet la suppresion d'une ressource via son identifiant unique
    *
    * @param {number} id
-   * @returns {Observable<WbDeleteRessourceByIdResponseMessage>}
+   * @returns {Observable<WbDeleteResourceByIdResponseMessage>}
    * @memberof AWbGenericCrudService
    */
-  public deleteById(id: number): Observable<WbDeleteRessourceByIdResponseMessage>
+  public deleteById(id: number): Observable<WbDeleteResourceByIdResponseMessage>
   {
     return this._httpClient
-      .delete<WbDeleteRessourceByIdResponseMessage>(`${this._apiUrl}/${this._endpoint}/${id}`);
+      .delete<WbDeleteResourceByIdResponseMessage>(`${this._apiUrl}/${this._endpoint}/${id}`);
   }
 
   /**
@@ -87,13 +87,13 @@ export abstract class AWbGenericCrudService
    * @template TUpdate
    * @param {number} id
    * @param {TUpdate} message
-   * @returns {Observable<WbUpdateRessourceResponseMessage<TModel>>}
+   * @returns {Observable<WbUpdateResourceResponseMessage<TModel>>}
    * @memberof AWbGenericCrudService
    */
-  public update<TModel, TUpdate>(id: number, message: TUpdate): Observable<WbUpdateRessourceResponseMessage<TModel>>
+  public update<TModel, TUpdate>(id: number, message: TUpdate): Observable<WbUpdateResourceResponseMessage<TModel>>
   {
     return this._httpClient
-      .put<WbUpdateRessourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
+      .put<WbUpdateResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
   }
 
   /**
@@ -103,12 +103,12 @@ export abstract class AWbGenericCrudService
    * @template TCreate
    * @param {number} id
    * @param {TCreate} message
-   * @returns {Observable<WbCreateRessourceResponseMessage<TModel>>}
+   * @returns {Observable<WbCreateResourceResponseMessage<TModel>>}
    * @memberof AWbGenericCrudService
    */
-  public create<TModel, TCreate>(id: number, message: TCreate): Observable<WbCreateRessourceResponseMessage<TModel>>
+  public create<TModel, TCreate>(id: number, message: TCreate): Observable<WbCreateResourceResponseMessage<TModel>>
   {
     return this._httpClient
-      .post<WbCreateRessourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
+      .post<WbCreateResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
   }
 }
