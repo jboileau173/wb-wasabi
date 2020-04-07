@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { IWbGenericCrudService } from './interface/i-wb-generic-crud-service';
 import { WbCreateResourceResponseMessage } from './message/wb-create-resource-response-message';
 import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resource-by-id-response-message';
 import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
 import { WbGetResourceResponseMessage } from './message/wb-get-resource-response-message';
 import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-response-message';
-import { IWbGenericCrudService } from './interface/i-wb-generic-crud-service';
 
 /**
  * Service pour effectuer les opérations basiques sur une API (CRUD).
@@ -39,7 +39,11 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService
 
   protected constructor(
     protected _httpClient: HttpClient
-  ) { }
+  )
+  {
+    this.checkApiUrl();
+    this.checkEndpoint();
+  }
 
   /**
    * Permet la récupération de toutes les ressources
@@ -111,5 +115,40 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService
   {
     return this._httpClient
       .post<WbCreateResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
+  }
+
+  /**
+   * Permet de vérifier que l'url de l'api est valorisée et valide
+   *
+   * @private
+   * @memberof AWbGenericCrudService
+   */
+  private checkApiUrl(): void
+  {
+    if (this._apiUrl == null)
+    {
+      throw new Error(`Api url is null`);
+    }
+
+    const regex: RegExp = new RegExp('^(http|https)\://.*$');
+
+    if (!regex.test(this._apiUrl))
+    {
+      throw new Error(`Invalid Api url`);
+    }
+  }
+
+  /**
+   * Permet de vérifier que le nom du contrôleur est valorisé
+   *
+   * @private
+   * @memberof AWbGenericCrudService
+   */
+  private checkEndpoint(): void
+  {
+    if (this._endpoint == null)
+    {
+      throw new Error(`Endpoint is null`);
+    }
   }
 }
