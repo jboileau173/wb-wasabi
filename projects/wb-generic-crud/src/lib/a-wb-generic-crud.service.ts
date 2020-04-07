@@ -7,7 +7,6 @@ import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resourc
 import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
 import { WbGetResourceResponseMessage } from './message/wb-get-resource-response-message';
 import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-response-message';
-import { OnInit } from '@angular/core';
 
 /**
  * Service pour effectuer les opérations basiques sur une API (CRUD).
@@ -16,7 +15,7 @@ import { OnInit } from '@angular/core';
  * @abstract
  * @class AWbGenericCrudService
  */
-export abstract class AWbGenericCrudService implements IWbGenericCrudService, OnInit
+export abstract class AWbGenericCrudService implements IWbGenericCrudService
 {
   /**
    * Url de l'api
@@ -42,12 +41,6 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService, On
     protected _httpClient: HttpClient
   )
   { }
-
-  public ngOnInit(): void
-  {
-    this.checkApiUrl();
-    this.checkEndpoint();
-  }
 
   /**
    * Permet la récupération de toutes les ressources
@@ -119,40 +112,5 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService, On
   {
     return this._httpClient
       .post<WbCreateResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
-  }
-
-  /**
-   * Permet de vérifier que l'url de l'api est valorisée et valide
-   *
-   * @private
-   * @memberof AWbGenericCrudService
-   */
-  private checkApiUrl(): void
-  {
-    if (this._apiUrl == null)
-    {
-      throw new Error(`Api url is null`);
-    }
-
-    const regex: RegExp = new RegExp('^(http|https)\://.*$');
-
-    if (!regex.test(this._apiUrl))
-    {
-      throw new Error(`Invalid Api url`);
-    }
-  }
-
-  /**
-   * Permet de vérifier que le nom du contrôleur est valorisé
-   *
-   * @private
-   * @memberof AWbGenericCrudService
-   */
-  private checkEndpoint(): void
-  {
-    if (this._endpoint == null)
-    {
-      throw new Error(`Endpoint is null`);
-    }
   }
 }
