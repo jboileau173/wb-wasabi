@@ -6,6 +6,7 @@ import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resourc
 import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
 import { WbGetResourceResponseMessage } from './message/wb-get-resource-response-message';
 import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-response-message';
+import { IWbGenericCrudService } from './i-wb-generic-crud-service';
 
 /**
  * Service pour effectuer les opérations basiques sur une API (CRUD).
@@ -14,7 +15,7 @@ import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-re
  * @abstract
  * @class AWbGenericCrudService
  */
-export abstract class AWbGenericCrudService
+export abstract class AWbGenericCrudService implements IWbGenericCrudService
 {
   /**
    * Url de l'api
