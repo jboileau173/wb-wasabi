@@ -1,5 +1,5 @@
 {
-  "name": "@isotonic/wb-generic-crud",
+  "name": "wb-generic-crud",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^9.1.0",
