@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs';
 
-import { WbCreateResourceResponseMessage } from './message/wb-create-resource-response-message';
-import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resource-by-id-response-message';
-import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
-import { WbGetResourceResponseMessage } from './message/wb-get-resource-response-message';
-import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-response-message';
+import { WbCreateResourceResponseMessage } from '../message/wb-create-resource-response-message';
+import { WbDeleteResourceByIdResponseMessage } from '../message/wb-delete-resource-by-id-response-message';
+import { WbGetAllResourcesResponseMessage } from '../message/wb-get-all-resources-response-message';
+import { WbGetResourceResponseMessage } from '../message/wb-get-resource-response-message';
+import { WbUpdateResourceResponseMessage } from '../message/wb-update-resource-response-message';
 
 /**
  * Permet de structurer les services pour effectuer les opérations basiques sur une API (CRUD).

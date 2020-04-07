@@ -6,7 +6,7 @@ import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resourc
 import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
 import { WbGetResourceResponseMessage } from './message/wb-get-resource-response-message';
 import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-response-message';
-import { IWbGenericCrudService } from './i-wb-generic-crud-service';
+import { IWbGenericCrudService } from './interface/i-wb-generic-crud-service';
 
 /**
  * Service pour effectuer les opérations basiques sur une API (CRUD).
