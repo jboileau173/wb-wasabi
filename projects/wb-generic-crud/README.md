@@ -33,6 +33,13 @@ export class MyCustomService extends AWbGenericCrudService
   protected _apiUrl: string = 'https://localhost:5000/api';
   
   protected _endpoint: string = 'contact';
+
+  public constructor(
+    private _httpClient: HttpClient
+  )
+  {
+    super(_httpClient);
+  }
 }
 ```
 

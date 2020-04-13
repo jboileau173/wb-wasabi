@@ -38,9 +38,8 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService
   protected abstract _endpoint: string;
 
   protected constructor(
-    protected _httpClient: HttpClient
-  )
-  { }
+    private _httpClient: HttpClient
+  ) { }
 
   /**
    * Permet la récupération de toutes les ressources
@@ -70,7 +69,7 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService
   }
 
   /**
-   * Permet la suppresion d'une ressource via son identifiant unique
+   * Permet la suppression d'une ressource via son identifiant unique
    *
    * @param {number} id
    * @returns {Observable<WbDeleteResourceByIdResponseMessage>}
