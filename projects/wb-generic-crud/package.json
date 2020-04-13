@@ -1,6 +1,6 @@
 {
   "name": "wb-generic-crud",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Permet de faciliter les appels à une API pour les opérations basiques (CRUD)",
   "keywords": [
     "angular"
