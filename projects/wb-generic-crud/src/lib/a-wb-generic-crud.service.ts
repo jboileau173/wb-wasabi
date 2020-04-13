@@ -38,7 +38,7 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService
   protected abstract _endpoint: string;
 
   protected constructor(
-    private _httpClient: HttpClient
+    protected _httpClient: HttpClient
   ) { }
 
   /**
