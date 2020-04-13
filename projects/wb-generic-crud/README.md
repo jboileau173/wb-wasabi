@@ -35,7 +35,7 @@ export class MyCustomService extends AWbGenericCrudService
   protected _endpoint: string = 'contact';
 
   public constructor(
-    private _httpClient: HttpClient
+    protected _httpClient: HttpClient
   )
   {
     super(_httpClient);
@@ -62,7 +62,7 @@ export class MyCustomService extends AWbGenericCrudService
   protected _endpoint: string = 'contact';
 
   public constructor(
-    private _httpClient: HttpClient
+    protected _httpClient: HttpClient
   )
   {
     super(_httpClient);
