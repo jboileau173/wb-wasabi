@@ -1,6 +1,12 @@
 {
-  "name": "@isotonic/wb-generic-crud",
-  "version": "0.0.2",
+  "name": "wb-generic-crud",
+  "version": "0.0.5",
+  "description": "Permet de faciliter les appels à une API pour les opérations basiques (CRUD)",
+  "keywords": [
+    "angular"
+  ],
+  "author": "Boileau Jonathan",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^9.1.0",
     "@angular/core": "^9.1.0",

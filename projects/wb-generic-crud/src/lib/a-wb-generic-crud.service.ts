@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { IWbGenericCrudService } from './interface/i-wb-generic-crud-service';
 import { WbCreateResourceResponseMessage } from './message/wb-create-resource-response-message';
 import { WbDeleteResourceByIdResponseMessage } from './message/wb-delete-resource-by-id-response-message';
 import { WbGetAllResourcesResponseMessage } from './message/wb-get-all-resources-response-message';
@@ -14,7 +15,7 @@ import { WbUpdateResourceResponseMessage } from './message/wb-update-resource-re
  * @abstract
  * @class AWbGenericCrudService
  */
-export abstract class AWbGenericCrudService
+export abstract class AWbGenericCrudService implements IWbGenericCrudService
 {
   /**
    * Url de l'api
@@ -68,7 +69,7 @@ export abstract class AWbGenericCrudService
   }
 
   /**
-   * Permet la suppresion d'une ressource via son identifiant unique
+   * Permet la suppression d'une ressource via son identifiant unique
    *
    * @param {number} id
    * @returns {Observable<WbDeleteResourceByIdResponseMessage>}

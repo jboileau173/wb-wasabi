@@ -7,6 +7,7 @@ export * from './lib/message/wb-get-resource-response-message';
 export * from './lib/message/wb-update-resource-response-message';
 
 // Le service de CRUD générique
+export * from './lib/interface/i-wb-generic-crud-service';
 export * from './lib/a-wb-generic-crud.service';
 
 // Le module principal de la librairie
