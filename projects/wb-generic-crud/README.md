@@ -74,6 +74,98 @@ export class MyCustomService extends AWbGenericCrudService
   }
 }
 ```
+
+## Exemple
+
+Définition des entités et des messages.
+
+```javascript
+export class ContactModel
+{
+  id: number;
+  name: string;
+}
+
+export class CreateContactRequestMessage
+{
+  name: string;
+}
+
+export class UpdateContactRequestMessage extends CreateContactRequestMessage
+{ }
+```
+
+Valorisation des entités et des messages. 
+
+```javascript
+const contactModel: ContactModel = {
+  id: 1,
+  name: 'John'
+};
+
+const createContactRequestMessage: CreateContactRequestMessage = {
+  name: 'John'
+};
+
+const updateContactRequestMessage: UpdateContactRequestMessage = {
+  name: 'John Doe'
+}
+```
+
+Utilisation des différentes méthodes.
+
+```javascript
+this._myService
+  .create<ContactModel, CreateContactRequestMessage>(createContactRequestMessage)
+  .subscribe((response: WbCreateResourceResponseMessage<ContactModel>) =>
+  {
+    if (!response.onError)
+    {
+      console.log(response.ressource);
+    }
+  });
+
+this._myService
+  .deleteById(contactModel.id)
+  .subscribe((response: WbDeleteResourceByIdResponseMessage) =>
+  {
+    if (!response.onError)
+    {
+      // Ressource supprimée
+    }
+  });
+
+this._myService
+  .getAll<ContactModel>()
+  .subscribe((response: WbGetAllResourcesResponseMessage<ContactModel>) =>
+  {
+    if (!response.onError)
+    {
+      console.log(response.ressources);
+    }
+  });
+
+this._myService
+  .getById<ContactModel>(1)
+  .subscribe((response: WbGetResourceResponseMessage<ContactModel>) =>
+  {
+    if (!response.onError)
+    {
+      console.log(response.ressource);
+    }
+  });
+
+this._myService
+  .update<ContactModel, UpdateContactRequestMessage>(1, updateContactRequestMessage)
+  .subscribe((response: WbUpdateResourceResponseMessage<ContactModel>) =>
+  {
+    if (!response.onError)
+    {
+      console.log(response.ressource);
+    }
+  });
+```
+
 **Note:**
 Le service de CRUD générique est basé sur une une interface **IWbGenericCrudService**. Vous pouvez implémenter cette 
 interface sur votre propre service pour définir votre propre comportement.
