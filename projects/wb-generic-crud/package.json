@@ -1,6 +1,6 @@
 {
   "name": "wb-generic-crud",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Permet de faciliter les appels à une API pour les opérations basiques (CRUD)",
   "keywords": [
     "angular"
@@ -13,8 +13,8 @@
     "directory": "tree/master/projects/wb-generic-crud"
   },
   "peerDependencies": {
-    "@angular/common": "^9.1.0",
-    "@angular/core": "^9.1.0",
+    "@angular/common": "^9.1.1",
+    "@angular/core": "^9.1.1",
     "tslib": "^1.10.0"
   }
 }
