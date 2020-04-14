@@ -75,7 +75,7 @@ export class MyCustomService extends AWbGenericCrudService
 }
 ```
 
-## Exemple
+# Exemple
 
 Définition des entités et des messages.
 
@@ -115,7 +115,7 @@ const updateContactRequestMessage: UpdateContactRequestMessage = {
 Utilisation des différentes méthodes.
 
 ```javascript
-this._myService
+this._myCustomService
   .create<ContactModel, CreateContactRequestMessage>(createContactRequestMessage)
   .subscribe((response: WbCreateResourceResponseMessage<ContactModel>) =>
   {
@@ -125,7 +125,7 @@ this._myService
     }
   });
 
-this._myService
+this._myCustomService
   .deleteById(contactModel.id)
   .subscribe((response: WbDeleteResourceByIdResponseMessage) =>
   {
@@ -135,7 +135,7 @@ this._myService
     }
   });
 
-this._myService
+this._myCustomService
   .getAll<ContactModel>()
   .subscribe((response: WbGetAllResourcesResponseMessage<ContactModel>) =>
   {
@@ -145,7 +145,7 @@ this._myService
     }
   });
 
-this._myService
+this._myCustomService
   .getById<ContactModel>(1)
   .subscribe((response: WbGetResourceResponseMessage<ContactModel>) =>
   {
@@ -155,7 +155,7 @@ this._myService
     }
   });
 
-this._myService
+this._myCustomService
   .update<ContactModel, UpdateContactRequestMessage>(1, updateContactRequestMessage)
   .subscribe((response: WbUpdateResourceResponseMessage<ContactModel>) =>
   {
