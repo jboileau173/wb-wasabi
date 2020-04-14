@@ -102,14 +102,13 @@ export abstract class AWbGenericCrudService implements IWbGenericCrudService
    *
    * @template TModel
    * @template TCreate
-   * @param {number} id
    * @param {TCreate} message
    * @returns {Observable<WbCreateResourceResponseMessage<TModel>>}
    * @memberof AWbGenericCrudService
    */
-  public create<TModel, TCreate>(id: number, message: TCreate): Observable<WbCreateResourceResponseMessage<TModel>>
+  public create<TModel, TCreate>(message: TCreate): Observable<WbCreateResourceResponseMessage<TModel>>
   {
     return this._httpClient
-      .post<WbCreateResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}/${id}`, message);
+      .post<WbCreateResourceResponseMessage<TModel>>(`${this._apiUrl}/${this._endpoint}`, message);
   }
 }

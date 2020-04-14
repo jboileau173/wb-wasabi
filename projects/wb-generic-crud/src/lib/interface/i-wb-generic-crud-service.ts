@@ -59,10 +59,9 @@ export interface IWbGenericCrudService
    *
    * @template TModel
    * @template TCreate
-   * @param {number} id
    * @param {TCreate} message
    * @returns {Observable<WbCreateResourceResponseMessage<TModel>>}
    * @memberof IWbGenericCrudService
    */
-  create<TModel, TCreate>(id: number, message: TCreate): Observable<WbCreateResourceResponseMessage<TModel>>
+  create<TModel, TCreate>(message: TCreate): Observable<WbCreateResourceResponseMessage<TModel>>
 }
