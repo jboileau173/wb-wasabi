@@ -1,6 +1,6 @@
 {
   "name": "wb-generic-crud",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Permet de faciliter les appels à une API pour les opérations basiques (CRUD)",
   "keywords": [
     "angular"
@@ -10,7 +10,7 @@
   "repository": {
     "type" : "git",
     "url" : "https://github.com/jboileau173/wb-wasabi.git",
-    "directory": "projects/wb-generic-crud"
+    "directory": "tree/master/projects/wb-generic-crud"
   },
   "peerDependencies": {
     "@angular/common": "^9.1.0",
